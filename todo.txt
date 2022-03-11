@@ -1,0 +1,4 @@
+1. Dodanie detali dla każdego z newsów, czyli po kliknięciu ma być więcej tekstu
+2. Baza danych z możliwymi kategoriami i sprawdzanie czy wpisane pasują do istniejacych
+3. Dodanie autoryzacji i stworzenie konta admina, autoryzacja tylko dla logowania, rejestracja
+   będzie przebiegać poprzez dodanie do bazy danych.
