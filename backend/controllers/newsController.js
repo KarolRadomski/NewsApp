@@ -10,7 +10,7 @@ const getNews = asyncHandler(async(req,res)=>{
 })
 
 // @desc    Set news
-// @route   SET /api/news
+// @route   POST /api/news
 // @access  Private
 const setNews = asyncHandler(async(req,res)=>{
    if(!req.body.title || !req.body.description){

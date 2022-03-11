@@ -16,6 +16,7 @@ app.use(express.urlencoded({extended: false}))
 
 //Routing
 app.use('/api/news', require('./routes/newsRoutes'))
+app.use('/api/users', require('./routes/adminRoutes'))
 
 //Error handler
 app.use(errorHandler)
