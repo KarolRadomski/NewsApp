@@ -1,4 +1,3 @@
-1. Dodanie detali dla każdego z newsów, czyli po kliknięciu ma być więcej tekstu
-2. Baza danych z możliwymi kategoriami i sprawdzanie czy wpisane pasują do istniejacych
-3. Dodanie autoryzacji i stworzenie konta admina, autoryzacja tylko dla logowania, rejestracja
-   będzie przebiegać poprzez dodanie do bazy danych.
+1. Do każdego z komponentów dodać przycisk "Zobacz więcej". Dodać nowe pole w bazie danych z całym
+artykułem. Do komponentu dodać onClick, a w funkcji obsługującej będzie renderowany komponent ze stroną
+tego artykułu. Trzeba przekazać to przez parametr, w sensie cały ten obiekt "News"

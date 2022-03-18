@@ -5,35 +5,32 @@ import { logout, reset } from '../features/adminAuth/authSlice'
 function Header() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const {admin} = useSelector((state)=>state.auth);
+  const { admin } = useSelector((state) => state.auth);
 
-  const onLogout = () =>{
+  const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
     navigate('/');
   }
 
   return (
-    
-    <header className='header'>
-        <div className="logo">
-            <Link to='/'>News APP</Link>
-            </div>
-          <ul>
-            {admin ? (
-              <li>
-                <button className="btn" onClick={onLogout}>Logout</button>
-              </li>
-            ) : (
-              <li>
-                <Link to="/admin">
-                  Admin Panel
-                </Link>
-              </li>
-            )}
-            
 
-        
+    <header className='header'>
+      <div className="logo">
+        <Link to='/'>News APP</Link>
+      </div>
+      <ul>
+        {admin ? (
+          <li>
+            <button className="btn" onClick={onLogout}>Logout</button>
+          </li>
+        ) : (
+          <li>
+            <Link to="/admin">
+              Admin Panel
+            </Link>
+          </li>
+        )}
       </ul>
     </header>
   )
