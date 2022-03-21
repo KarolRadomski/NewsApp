@@ -1,7 +1,6 @@
 import styles from "../styles/NewsItem.module.css"
 
 function NewsItem({ news }) {
-  console.log(news);
 
   return (
     <div className={styles.oneNews}>

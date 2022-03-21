@@ -20,10 +20,11 @@ function AdminPanel() {
       return () => {
          dispatch(reset());
       }
-   }, [isError, message, admin, navigate, dispatch])
+   }, [ isError, message, admin, navigate, dispatch])
 
    if (isLoading) return (<Spinner />)
 
+ 
    return (
       <>
          <section className='content'>

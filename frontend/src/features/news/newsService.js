@@ -38,7 +38,7 @@ const deleteNews = async (newsData, token) => {
             Authorization: `Bearer ${token}`,
         },
     }
-    const response = await axios.delete(API_URL, newsData, config);
+    const response = await axios.delete(API_URL+ newsData, config);
     return response.data;
 }
 

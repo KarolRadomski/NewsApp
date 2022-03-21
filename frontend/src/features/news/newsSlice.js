@@ -26,9 +26,12 @@ export const getNews = createAsyncThunk('news/getAll',
 export const addNews = createAsyncThunk('news/setNews',
     async (newsData, thunkAPI) => {
         try {
-            const token = thunkAPI.getState.auth.admin.token;
+            const token = thunkAPI.getState().auth.admin.token;
+            
             return await newsService.addNews(newsData, token);
+            
         } catch (error) {
+            
             const message =
                 (error.response &&
                     error.response.data &&
@@ -45,7 +48,7 @@ export const addNews = createAsyncThunk('news/setNews',
 export const editNews = createAsyncThunk('news/editNews',
     async (newsData, thunkAPI) => {
         try {
-            const token = thunkAPI.getState.auth.admin.token;
+            const token = thunkAPI.getState().auth.admin.token;
             return await newsService.editNews(newsData, token);
         } catch (error) {
             const message =
@@ -62,10 +65,12 @@ export const editNews = createAsyncThunk('news/editNews',
 
 //Delete the news by Admin
 export const deleteNews = createAsyncThunk('news/deleteNews',
-    async (newsData, thunkAPI) => {
+    async (id, thunkAPI) => {
         try {
-            const token = thunkAPI.getState.auth.admin.token;
-            return await newsService.deleteNews(newsData, token);
+            
+            const token = thunkAPI.getState().auth.admin.token;
+            console.log(token);
+            return await newsService.deleteNews(id, token);
         } catch (error) {
             const message =
                 (error.response &&
