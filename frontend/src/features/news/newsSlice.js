@@ -110,7 +110,7 @@ export const newsSlice = createSlice({
             .addCase(addNews.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
-                state.news = action.payload;
+                state.news.push(action.payload);
             })
             .addCase(addNews.rejected, (state, action) => {
                 state.isError = true;
@@ -137,7 +137,7 @@ export const newsSlice = createSlice({
                 state.isLoading = false;
                 state.isSuccess = true;
                 state.news = state.news.filter(
-                    (news) => news._id !== action.payload.id
+                    (newses) => newses._id !== action.payload._id
                 );
             })
             .addCase(deleteNews.rejected, (state, action) => {
