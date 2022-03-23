@@ -21,9 +21,15 @@ function Header() {
       </div>
       <ul>
         {admin ? (
-          <li>
-            <button className="btn" onClick={onLogout}>Logout</button>
-          </li>
+          <>
+            <li>
+              <button className='btn' onClick={()=>navigate("/adminpanel")}>Admin Panel</button>
+              
+            </li>
+            <li>
+              <button className="btn" onClick={onLogout}>Logout</button>
+            </li>
+          </>
         ) : (
           <li>
             <Link to="/admin">
