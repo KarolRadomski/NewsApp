@@ -5,6 +5,7 @@ import { getNews, reset } from '../features/news/newsSlice'
 import Spinner from '../components/Spinner';
 import NewsItemForAdmin from '../components/NewsItemForAdmin';
 
+
 function AdminPanel() {
    const navigate = useNavigate();
    const dispatch = useDispatch();
@@ -20,11 +21,11 @@ function AdminPanel() {
       return () => {
          dispatch(reset());
       }
-   }, [ isError, message, admin, navigate, dispatch])
+   }, [isError, message, admin, navigate, dispatch])
 
    if (isLoading) return (<Spinner />)
 
- 
+
    return (
       <>
          <section className='content'>
