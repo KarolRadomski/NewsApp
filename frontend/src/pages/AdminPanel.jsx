@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { getNews, reset } from '../features/news/newsSlice'
 import Spinner from '../components/Spinner';
 import NewsItemForAdmin from '../components/NewsItemForAdmin';
-
+import BarForAdminPage from '../components/BarForAdminPage';
 
 function AdminPanel() {
    const navigate = useNavigate();
@@ -29,6 +29,7 @@ function AdminPanel() {
    return (
       <>
          <section className='content'>
+         <BarForAdminPage />
             {news.length > 0 ? (
                <div className="newses">
                   {news.map((newsOne) => (

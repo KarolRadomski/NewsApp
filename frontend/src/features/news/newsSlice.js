@@ -49,7 +49,7 @@ export const editNews = createAsyncThunk('news/editNews',
     async (newsData, thunkAPI) => {
         try {
             const token = thunkAPI.getState().auth.admin.token;
-            return await newsService.editNews(newsData, token);
+            return await newsService.editNews(newsData, token, newsData._id);
         } catch (error) {
             const message =
                 (error.response &&
@@ -123,7 +123,9 @@ export const newsSlice = createSlice({
             .addCase(editNews.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
-                state.news = action.payload;
+                state.news= state.news.map((temp)=>{
+                    return temp._id===action.payload._id ? temp= action.payload :temp;
+                })
             })
             .addCase(editNews.rejected, (state, action) => {
                 state.isError = true;
