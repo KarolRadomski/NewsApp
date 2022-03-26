@@ -1,6 +1,5 @@
 import styles from '../styles/NewsItem.module.css';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function NewsItem({ news }) {
   const navigate = useNavigate();
 
