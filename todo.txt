@@ -1,3 +1,0 @@
-1. Do każdego z komponentów dodać przycisk "Zobacz więcej". Dodać nowe pole w bazie danych z całym
-artykułem. Do komponentu dodać onClick, a w funkcji obsługującej będzie renderowany komponent ze stroną
-tego artykułu. Trzeba przekazać to przez parametr, w sensie cały ten obiekt "News"

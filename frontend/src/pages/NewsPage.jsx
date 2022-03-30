@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NewsItem from '../components/NewsItem';
 import Spinner from '../components/Spinner';
-import { getNews, reset } from '../features/news/newsSlice';
+import { getNews, newsReset } from '../features/news/newsSlice';
 
 function NewsPage() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function NewsPage() {
     }
     dispatch(getNews());
     return () => {
-      dispatch(reset());
+      dispatch(newsReset());
     };
   }, [isError, message, dispatch]);
 

@@ -1,5 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const News = require('../models/newsModel');
+const Comments = require('../models/commentModel');
 
 // @desc    Get news
 // @route   GET /api/news
@@ -79,6 +80,9 @@ const deleteNews = asyncHandler(async (req, res) => {
     throw new Error('News not found');
   }
   const deletedNews = await News.findByIdAndDelete(req.params.id);
+  const commentsToDelete = await Comments.find({ NewsId: req.params.id });
+
+  await Comments.deleteMany({ NewsId: req.params.id });
 
   res.json(deletedNews);
 });

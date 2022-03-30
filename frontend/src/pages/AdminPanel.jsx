@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getNews, reset } from '../features/news/newsSlice';
+import { getNews, newsReset } from '../features/news/newsSlice';
 import Spinner from '../components/Spinner';
 import NewsItemForAdmin from '../components/NewsItemForAdmin';
 import BarForAdminPage from '../components/BarForAdminPage';
@@ -25,7 +25,7 @@ function AdminPanel() {
 
     if (!admin) navigate('/admin');
     dispatch(getNews());
-    dispatch(reset());
+    dispatch(newsReset());
   }, [isError, message, admin, navigate, dispatch]);
 
   if (isLoading) return <Spinner />;

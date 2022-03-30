@@ -63,7 +63,6 @@ export const addNews = createAsyncThunk(
 );
 
 //Edit the news by Admin
-//Nie wiem czy to działa
 export const editNews = createAsyncThunk(
   'news/editNews',
   async (newsData, thunkAPI) => {
@@ -106,7 +105,7 @@ export const newsSlice = createSlice({
   name: 'news',
   initialState,
   reducers: {
-    reset: (state) => initialState,
+    newsReset: (state) => initialState,
   },
   extraReducers: (builder) => {
     builder
@@ -123,7 +122,6 @@ export const newsSlice = createSlice({
         state.isLoading = false;
         state.message = action.payload;
       })
-      /////////////////
       .addCase(getOneNews.pending, (state) => {
         state.isLoading = true;
       })
@@ -137,7 +135,6 @@ export const newsSlice = createSlice({
         state.isLoading = false;
         state.message = action.payload;
       })
-      /////////////////
       .addCase(addNews.pending, (state) => {
         state.isLoading = true;
       })
@@ -187,5 +184,5 @@ export const newsSlice = createSlice({
   },
 });
 
-export const { reset } = newsSlice.actions;
+export const { newsReset } = newsSlice.actions;
 export default newsSlice.reducer;
