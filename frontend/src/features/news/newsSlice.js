@@ -149,6 +149,7 @@ export const newsSlice = createSlice({
       .addCase(addNews.rejected, (state, action) => {
         state.isError = true;
         state.isLoading = false;
+        state.isSuccess = false;
         state.message = action.payload;
       })
       .addCase(editNews.pending, (state) => {

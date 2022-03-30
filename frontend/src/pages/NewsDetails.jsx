@@ -29,7 +29,7 @@ function NewsDetails() {
 
   return (
     <div className={style.container}>
-      <h2>{news.title}</h2>
+      <h2 className={style.title}>{news.title}</h2>
       <img className={style.image} src={news.img} alt="" />
       <p className={style.shortDesc}>{news.description}</p>
       <p className={style.longDesc}>{news.longDescription}</p>
