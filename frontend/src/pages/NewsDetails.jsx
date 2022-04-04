@@ -8,6 +8,7 @@ import {
 } from '../features/comments/commentsSlice';
 import Spinner from '../components/Spinner';
 import Comment from '../components/Comment';
+import CommentForm from '../components/CommentForm';
 import style from '../styles/NewsDetails.module.css';
 
 function NewsDetails() {
@@ -43,7 +44,7 @@ function NewsDetails() {
   if (isNewsLoading || isCommentsLoading) {
     return <Spinner />;
   }
-  console.log(comments);
+
   return (
     <div className={style.container}>
       <h2 className={style.title}>{news.title}</h2>
@@ -51,7 +52,9 @@ function NewsDetails() {
       <p className={style.shortDesc}>{news.description}</p>
       <p className={style.longDesc}>{news.longDescription}</p>
 
-      <div className="comments">
+      <div className={style.comments}>
+        <h2>Comments ({comments.length})</h2>
+        <CommentForm key={news._id} id={news._id} />
         {comments.map((comment) => (
           <Comment key={comment._id} comment={comment} />
         ))}

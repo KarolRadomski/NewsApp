@@ -1,0 +1,40 @@
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-size: small;
+}
+input {
+  width: 30%;
+}
+.form {
+  padding: 10px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 8px 5px 24px -16px rgba(0, 0, 0, 1);
+}
+.btn {
+  padding: 5px 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  margin: auto auto;
+  margin-bottom: 10px;
+  appearance: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn:hover {
+  transform: scale(0.98);
+}

@@ -24,14 +24,18 @@ function NewsPage() {
   if (isLoading) {
     return <Spinner />;
   }
+
   return (
     <>
       <h1>Aktualności</h1>
       <section className="content">
         {news.length > 0 ? (
           <div className="newses">
-            {news.map((newsOne) => (
-              <NewsItem key={newsOne._id} news={newsOne} />
+            {news.map((newsOne, index) => (
+              <>
+                <NewsItem key={newsOne._id} news={newsOne} />
+                <h2>{index}</h2>
+              </>
             ))}
           </div>
         ) : (

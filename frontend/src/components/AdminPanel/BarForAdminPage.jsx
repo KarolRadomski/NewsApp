@@ -1,8 +1,8 @@
 import React from 'react';
 import { IoAddCircleOutline } from 'react-icons/io5';
-import style from '../styles/BarForAdminPage.module.css';
+import style from '../../styles/BarForAdminPage.module.css';
 import { useState } from 'react';
-import AddPopUp from '../components/AddPopUp';
+import AddPopUp from './AddPopUp';
 function BarForAdminPage() {
   const [editPopUpVisible, setEditPopUpVisible] = useState(false);
   const switchEditPopUpVisible = () => {

@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getNews, newsReset } from '../features/news/newsSlice';
 import Spinner from '../components/Spinner';
-import NewsItemForAdmin from '../components/NewsItemForAdmin';
-import BarForAdminPage from '../components/BarForAdminPage';
+import NewsItemForAdmin from '../components/AdminPanel/NewsItemForAdmin';
+import BarForAdminPage from '../components/AdminPanel/BarForAdminPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function AdminPanel() {

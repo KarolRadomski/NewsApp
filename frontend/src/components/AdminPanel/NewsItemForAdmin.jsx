@@ -1,7 +1,7 @@
-import styles from '../styles/NewsItemForAdmin.module.css';
+import styles from '../../styles/NewsItemForAdmin.module.css';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
-import { deleteNews } from '../features/news/newsSlice';
+import { deleteNews } from '../../features/news/newsSlice';
 import { useDispatch } from 'react-redux';
 import EditPopUp from './EditPopUp';
 import { useState } from 'react';

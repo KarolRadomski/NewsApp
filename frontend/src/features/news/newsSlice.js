@@ -87,7 +87,6 @@ export const deleteNews = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.admin.token;
-      console.log(token);
       return await newsService.deleteNews(id, token);
     } catch (error) {
       const message =

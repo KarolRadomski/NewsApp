@@ -26,7 +26,7 @@ const addNews = async (newsData, token) => {
 };
 
 //Edit news
-//Nie wiem czy to będzie działać
+
 const editNews = async (newsData, token, id) => {
   const config = {
     headers: {
