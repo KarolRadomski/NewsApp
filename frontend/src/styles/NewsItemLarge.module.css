@@ -1,0 +1,36 @@
+.titleText {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.img {
+  position: absolute;
+  max-width: 66%;
+  max-height: auto;
+}
+.background {
+  width: 100%;
+  min-height: 41vw;
+  background-size: cover;
+  background-position: center; /* Center the image */
+}
+.container {
+  height: 42vw;
+}
+
+.title {
+  position: relative;
+  top: -3rem;
+  background-color: rgba(0, 0, 0, 0.459);
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: center;
+  color: white;
+  height: 3rem;
+}
+@media (max-width: 600px) {
+  .title {
+    font-size: 0.9rem;
+    height: 2rem;
+    top: -2rem;
+  }
+}

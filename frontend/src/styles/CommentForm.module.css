@@ -38,3 +38,8 @@ input {
 .btn:hover {
   transform: scale(0.98);
 }
+@media (max-width: 600px) {
+  input {
+    width: 60%;
+  }
+}

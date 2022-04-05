@@ -71,3 +71,13 @@ li {
 .btn:hover {
   transform: scale(0.98);
 }
+@media (max-width: 600px) {
+  .header {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+}

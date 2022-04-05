@@ -1,6 +1,6 @@
 import styles from '../styles/NewsItem.module.css';
 import { useNavigate } from 'react-router-dom';
-function NewsItem({ news }) {
+function NewsItemSmallWithDesc({ news }) {
   const navigate = useNavigate();
 
   return (
@@ -27,4 +27,4 @@ function NewsItem({ news }) {
   );
 }
 
-export default NewsItem;
+export default NewsItemSmallWithDesc;
