@@ -5,6 +5,7 @@ import { login, reset } from '../features/adminAuth/authSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Spinner from '../components/Spinner';
+import { FaSignInAlt } from 'react-icons/fa';
 import style from '../styles/Login.module.css';
 
 function Login() {
@@ -66,7 +67,10 @@ function Login() {
   return (
     <>
       <section className={style.heading}>
-        <h1>Login only for Admins</h1>
+        <span className={style.icon}>
+          <FaSignInAlt />
+        </span>
+        Login only for Admins
         <p className={style.paragraf}>Login and start manage news</p>
       </section>
       <section className={style.form}>
