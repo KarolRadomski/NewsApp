@@ -20,7 +20,7 @@
   position: absolute;
   text-align: center;
   justify-content: center;
-  top: 120px;
+  top: 70px;
   left: 10%;
   right: auto;
   max-width: 80%;
@@ -95,5 +95,15 @@
   .container img {
     max-width: 80%;
     height: 45vw;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container img {
+    max-width: 40%;
+    height: 35vw;
+  }
+  .background {
+    height: 30vw;
   }
 }

@@ -44,7 +44,7 @@ function NewsDetails() {
   ]);
 
   if (isNewsLoading || isCommentsLoading) {
-    return <Spinner />;
+    return <Spinner key={'spinner'} />;
   }
   let months = [
     'Jan',
@@ -76,13 +76,13 @@ function NewsDetails() {
         <div className={style.newsStatistic}>
           <div className={style.date}>
             <span className={style.icon}>
-              <AiOutlineCalendar />
+              <AiOutlineCalendar key={'icon1'} />
             </span>
             <span>{`${date}`}</span>
           </div>
           <div className={style.numberOfComments}>
             <span className={style.icon}>
-              <BiComment />
+              <BiComment key={'icon2'} />
             </span>
             <span>
               {comments.length ? `${comments.length} comments` : 'No Comments'}

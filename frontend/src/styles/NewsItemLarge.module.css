@@ -9,30 +9,34 @@
 }
 .background {
   width: 100%;
-  min-height: 31vw;
+  min-height: 32vw;
   background-size: cover;
   background-position: center; /* Center the image */
+  justify-items: end;
 }
 
-.container:hover {
+.background:hover {
   transform: scale(1.005);
   cursor: pointer;
 }
 
 .title {
   position: relative;
-  top: -3rem;
+  top: 28vw;
   background-color: rgba(0, 0, 0, 0.459);
   font-weight: 500;
-  font-size: 1.3rem;
-  text-align: center;
+  font-size: 2.5vw;
+  text-align: left;
   color: white;
-  height: 3rem;
+  height: 4vw;
 }
 @media (max-width: 600px) {
+  .background {
+    min-height: 50vw;
+  }
   .title {
-    font-size: 0.9rem;
-    height: 2rem;
-    top: -2rem;
+    font-size: 4vw;
+    height: 6vw;
+    top: 44vw;
   }
 }

@@ -5,13 +5,10 @@ function NewsItemMedium({ news }) {
   const navigate = useNavigate();
   return (
     <div
-      className={style.container}
+      className={style.background}
+      style={{ backgroundImage: `url('${news.img}')` }}
       onClick={() => navigate(`/newsdetails/${news._id}`)}
     >
-      <div
-        className={style.background}
-        style={{ backgroundImage: `url('${news.img}')` }}
-      ></div>
       <div className={style.title}>
         <p className={style.titleText}>{news.title}</p>
       </div>
