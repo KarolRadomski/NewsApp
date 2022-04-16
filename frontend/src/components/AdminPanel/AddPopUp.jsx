@@ -1,7 +1,9 @@
-import style from '../../styles/EditPopUp.module.css';
+import style from '../../styles/PopUp.module.css';
 import { useState } from 'react';
 import { addNews } from '../../features/news/newsSlice';
 import { useDispatch } from 'react-redux';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 function EditPopUp({ exit }) {
   const dispatch = useDispatch();
@@ -12,13 +14,8 @@ function EditPopUp({ exit }) {
   };
 
   const [description, setDescription] = useState('');
-  const updateDescription = (e) => {
-    setDescription(e.target.value);
-  };
+
   const [longDescription, setLongDescription] = useState('');
-  const updateLongDescription = (e) => {
-    setLongDescription(e.target.value);
-  };
 
   const [img, setImg] = useState('');
   const updateImg = (e) => {
@@ -50,13 +47,18 @@ function EditPopUp({ exit }) {
           </label>
           <label>
             Description: &nbsp;
-            <textarea value={description} onChange={updateDescription} />
+            <ReactQuill
+              theme="snow"
+              value={description}
+              onChange={setDescription}
+            />
           </label>
           <label>
-            Description: &nbsp;
-            <textarea
+            Long Description: &nbsp;
+            <ReactQuill
+              theme="snow"
               value={longDescription}
-              onChange={updateLongDescription}
+              onChange={setLongDescription}
             />
           </label>
           <label>
@@ -67,7 +69,7 @@ function EditPopUp({ exit }) {
             Category: &nbsp;
             <input type="text" value={category} onChange={updateCategory} />
           </label>
-          <button className="btn" type="submit">
+          <button className={style.btn} type="submit">
             {' '}
             Submit{' '}
           </button>

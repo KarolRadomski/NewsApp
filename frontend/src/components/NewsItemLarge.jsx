@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 function NewsItemLarge({ news }) {
   const navigate = useNavigate();
   return (
-    <div onClick={() => navigate(`/newsdetails/${news._id}`)}>
+    <div
+      className={style.container}
+      onClick={() => navigate(`/newsdetails/${news._id}`)}
+    >
       <div
         className={style.background}
         style={{ backgroundImage: `url('${news.img}')` }}

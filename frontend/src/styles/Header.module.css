@@ -1,83 +1,69 @@
-ul {
-  list-style: none;
+.container {
+  /* max-width: 960px; Limits the width of the container but let's it get smaller if needed. */
+  margin: 0 auto; /*Center the container horizontally in the middle of the page.*/
+  padding: 12px;
+  color: white;
 }
-
-li {
-  line-height: 2.2;
-}
-
-.header {
+.navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
-}
 
-.header ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header ul li {
-  margin-left: 20px;
-}
-
-.header ul li a {
-  display: flex;
-  align-items: center;
-}
-
-.header ul li a:hover {
-  color: #777;
-}
-
-.header ul li a svg {
-  margin-right: 5px;
-}
-
-.btn {
-  padding: 10px 20px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  background: #000;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  text-align: center;
-  appearance: button;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn svg {
-  margin-right: 8px;
-}
-
-.btn-reverse {
-  background: #fff;
-  color: #000;
-}
-
-.btn-block {
-  width: 100%;
+  flex-wrap: wrap; /*Allows the children inside a flex container to wrap down onto the next line if there is not enough space.*/
+  align-items: center; /*Centers the children of a flex container vertically.*/
+  justify-content: space-between; /*Adds space between each child of a flex container.*/
+  background-color: #222527;
+  padding-block: 15px; /*Padding top and bottom*/
+  padding-left: 10%;
+  padding-right: 10%;
+  border-bottom: 7px solid #e5383b;
   margin-bottom: 20px;
 }
-
-.btn:hover {
-  transform: scale(0.98);
+.navbar a {
+  text-decoration: none;
+  color: inherit; /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
+  cursor: pointer;
 }
-@media (max-width: 600px) {
-  .header {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 16px;
+.logo {
+  margin-right: 50px;
+}
+.login {
+  max-height: 0;
+}
+.list {
+  list-style: none;
+  display: flex;
+  gap: 25px; /*Applies right and bottom spacing between children inside a flex or grid container.*/
+}
+#toggler,
+.navbar label {
+  display: none; /*Hide the checkbox and label on large screens.*/
+  background-color: #222527;
+}
+/*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
+@media screen and (max-width: 600px) {
+  .menu {
+    width: 100%;
+    max-height: 0; /*Makes the max-height 0 to side the expanded menu.*/
+    overflow: hidden; /*Hides the overflowing content.*/
   }
-  .btn {
-    font-size: 14px;
+  .list {
+    flex-direction: column; /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar label {
+    display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+    align-items: center;
+    cursor: pointer;
+  }
+  .navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  /* 
+        The general sibling selector (~) selects all elements that are next siblings of #toggler.
+        In this case we target the .menu and we turn the height back to 100% to show the menu.
+    */
+  #toggler:checked ~ .menu {
+    max-height: 100%;
   }
 }

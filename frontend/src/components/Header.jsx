@@ -1,12 +1,15 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { logout, reset } from '../features/adminAuth/authSlice';
 import style from '../styles/Header.module.css';
+import { RiMenuFill } from 'react-icons/ri';
 
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { admin } = useSelector((state) => state.auth);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   const onLogout = () => {
     dispatch(logout());
@@ -15,34 +18,47 @@ function Header() {
   };
 
   return (
-    <header className={style.header}>
-      <div className={style.logo}>
-        <Link to="/">News APP</Link>
-      </div>
-      <ul>
-        {admin ? (
-          <>
-            <li>
-              <button
-                className={style.btn}
-                onClick={() => navigate('/adminpanel')}
-              >
-                Admin Panel
-              </button>
-            </li>
-            <li>
-              <button className={style.btn} onClick={onLogout}>
-                Logout
-              </button>
-            </li>
-          </>
-        ) : (
+    <nav className={style.navbar + ' ' + style.container}>
+      <a href="/" className={style.logo}>
+        NewsApp
+      </a>
+      {admin ? (
+        <>
+          <input
+            type="checkbox"
+            id={style.toggler}
+            checked={menuVisible}
+            onChange={(e) => setMenuVisible(e.target.menuVisible)}
+          ></input>
+          <label htmlFor={style.toggler}>
+            <i>
+              <RiMenuFill key={'123'} />
+            </i>
+          </label>
+          <div className={style.menu}>
+            <ul className={style.list}>
+              <li>
+                <a
+                  href="/adminpanel"
+                  onClick={() => setMenuVisible(!menuVisible)}
+                >
+                  Admin Panel
+                </a>
+              </li>
+              <li>
+                <a onClick={onLogout}>Logout</a>
+              </li>
+            </ul>
+          </div>
+        </>
+      ) : (
+        <ul className={style.list} style={{ padding: '0px' }}>
           <li>
-            <Link to="/admin">Admin Panel</Link>
+            <a href="/admin">Login</a>
           </li>
-        )}
-      </ul>
-    </header>
+        </ul>
+      )}
+    </nav>
   );
 }
 

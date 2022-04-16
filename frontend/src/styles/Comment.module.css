@@ -1,5 +1,4 @@
 .comment {
-  border: 1px solid darkgray;
   border-radius: 2px;
   box-shadow: 4px 3px 12px -1px rgba(0, 0, 0, 0.39);
   margin: 5px;
@@ -16,6 +15,7 @@
 }
 .author {
   font-weight: 600;
+  text-align: left;
 }
 .content {
   font-size: smaller;
@@ -30,13 +30,11 @@
 }
 .likesCounterGreen {
   color: green;
-  margin-left: 3px;
-  margin-right: 3px;
+  width: 30px;
 }
 .likesCounterRed {
   color: red;
-  margin-left: 3px;
-  margin-right: 3px;
+  width: 30px;
 }
 svg {
   position: relative;

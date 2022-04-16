@@ -7,16 +7,19 @@ const timeAgo = (date) => {
   );
   let minutes = Math.floor((new Date() - commentAddAt) / 60000 - 120); //-120 because in MongoDB default UTF is UTF+0
   if (minutes < 60) {
-    if (minutes === 1) return `${minutes} minute ago`;
+    if (minutes === 1 || minutes === 0) return `now`;
     else return `${minutes} minutes ago`;
   } else if (minutes < 1440) {
-    if (minutes % 60 === 1) return `${Math.floor(minutes / 60)} hour ago`;
+    if (Math.floor(minutes / 60) === 1)
+      return `${Math.floor(minutes / 60)} hour ago`;
     else return `${Math.floor(minutes / 60)} hours ago`;
   } else if (minutes < 10080) {
-    if (minutes % 1440 === 1) return `${Math.floor(minutes / 1440)} day ago`;
+    if (Math.floor(minutes / 1440) === 1)
+      return `${Math.floor(minutes / 1440)} day ago`;
     else return `${Math.floor(minutes / 1440)} days ago`;
   } else if (minutes < 43200) {
-    if (minutes % 10080 === 1) return `${Math.floor(minutes / 10080)} week ago`;
+    if (Math.floor(minutes / 10080) === 1)
+      return `${Math.floor(minutes / 10080)} week ago`;
     else return `${Math.floor(minutes / 10080)} weeks ago`;
   } else if (minutes < 525600) {
     if (Math.floor(minutes / 43200) === 1)

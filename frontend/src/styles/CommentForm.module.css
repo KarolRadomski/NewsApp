@@ -1,4 +1,4 @@
-input,
+.formGroup input,
 textarea {
   width: 100%;
   padding: 10px;
@@ -8,8 +8,11 @@ textarea {
   font-family: inherit;
   font-size: small;
 }
-input {
+.formGroup input {
   width: 30%;
+}
+.formGroup {
+  text-align: left;
 }
 .form {
   padding: 10px;

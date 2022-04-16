@@ -11,20 +11,21 @@
   padding: 2px;
 }
 
-.idInfo {
+.title {
   font-size: normal;
-  width: 35%;
+  width: 50%;
   align-self: center;
   justify-content: center;
-
+  padding-left: 10px;
   border-right: 1px solid #e6e6e6;
 }
 
-.NewsData {
+.date {
   align-self: center;
   font-size: normal;
-  width: 50%;
+  width: 30%;
   font-weight: 600;
+  padding-left: 10px;
 }
 
 .buttons {
@@ -32,7 +33,7 @@
   align-self: center;
   display: flex;
   justify-content: space-around;
-  width: 10%;
+  width: 20%;
   border-left: 1px solid #e6e6e6;
 }
 .editButton:hover,
@@ -44,11 +45,15 @@
 @media (max-width: 700px) {
   .oneNews {
     flex-direction: column;
+    width: 90%;
+    margin: 0 auto 10px auto;
   }
-  .idInfo,
-  .NewsData,
+  .title,
+  .date,
   .buttons {
     width: 100%;
     margin-bottom: 10px;
+    padding: 0;
+    text-align: center;
   }
 }

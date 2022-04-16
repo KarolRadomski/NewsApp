@@ -1,7 +1,9 @@
-import style from '../../styles/EditPopUp.module.css';
+import style from '../../styles/PopUp.module.css';
 import { useState } from 'react';
 import { editNews } from '../../features/news/newsSlice';
 import { useDispatch } from 'react-redux';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 function EditPopUp({ news, exit }) {
   const dispatch = useDispatch();
@@ -12,23 +14,18 @@ function EditPopUp({ news, exit }) {
   };
 
   const [description, setDescription] = useState(news.description);
-  const updateDescription = (e) => {
-    setDescription(e.target.value);
-  };
 
   const [longDescription, setLongDescription] = useState(news.longDescription);
-  const updateLongDescription = (e) => {
-    setLongDescription(e.target.value);
-  };
 
   const [img, setImg] = useState(news.img);
   const updateImg = (e) => {
     setImg(e.target.value);
   };
 
-  const [category, setCategory] = useState(news.description);
+  const [category, setCategory] = useState(news.category);
   const updateCategory = (e) => {
     setCategory(e.target.value);
+    console.log(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -45,30 +42,35 @@ function EditPopUp({ news, exit }) {
         </span>
         <h2>You're editing a news</h2>
         <form className={style.form} onSubmit={handleSubmit}>
-          <label>
+          <label className={style.inputField}>
             Title: &nbsp;
             <input type="text" value={title} onChange={updateTitle} />
           </label>
-          <label>
+          <label className={style.inputField}>
             Description: &nbsp;
-            <textarea value={description} onChange={updateDescription} />
-          </label>
-          <label>
-            Long Description: &nbsp;
-            <textarea
-              value={longDescription}
-              onChange={updateLongDescription}
+            <ReactQuill
+              theme="snow"
+              value={description}
+              onChange={setDescription}
             />
           </label>
-          <label>
+          <label className={style.inputField}>
+            Long Description: &nbsp;
+            <ReactQuill
+              theme="snow"
+              value={longDescription}
+              onChange={setLongDescription}
+            />
+          </label>
+          <label className={style.inputField}>
             Img URL: &nbsp;
             <input type="text" value={img} onChange={updateImg} />
           </label>
-          <label>
+          <label className={style.inputField}>
             Category: &nbsp;
             <input type="text" value={category} onChange={updateCategory} />
           </label>
-          <button className="btn" type="submit">
+          <button className={style.btn} type="submit">
             {' '}
             Submit{' '}
           </button>

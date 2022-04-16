@@ -16,18 +16,18 @@
   padding: 20px;
   border: 1px solid #888;
   border-radius: 10px;
-  width: 50%; /* Could be more or less, depending on screen size */
-  min-height: 50%;
+  width: 80%; /* Could be more or less, depending on screen size */
 }
-
+.inputField {
+  margin: 10px 0px 10px 0px;
+}
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-input,
-textarea {
+.modal input {
   width: 100%;
   padding: 10px;
   border: 1px solid #e6e6e6;
@@ -39,6 +39,8 @@ textarea {
 
 .btn {
   padding: 10px 20px;
+  width: 50%;
+  margin: 0 auto 0 auto;
   border: 1px solid #000;
   border-radius: 5px;
   background: #000;
@@ -71,5 +73,9 @@ textarea {
 @media (max-width: 700px) {
   .modal_content {
     width: 80%; /* Could be more or less, depending on screen size */
+  }
+  .modal input,
+  .modal textarea {
+    font-size: xx-small;
   }
 }

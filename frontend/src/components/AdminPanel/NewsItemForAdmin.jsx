@@ -13,7 +13,28 @@ function NewsItemForAdmin({ news }) {
   const switchEditPopUpVisible = () => {
     setEditPopUpVisible(!editPopUpVisible);
   };
-
+  let months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  let date =
+    months[parseInt(`${news.createdAt}`.slice(5, 7))] +
+    ' ' +
+    `${news.createdAt}`.slice(8, 10) +
+    ', ' +
+    `${news.createdAt}`.slice(0, 4) +
+    '\u00A0 \u00A0' +
+    `${news.createdAt}`.slice(11, 16);
   return (
     <>
       {editPopUpVisible ? (
@@ -22,16 +43,18 @@ function NewsItemForAdmin({ news }) {
         ''
       )}
       <div className={styles.oneNews}>
-        <div className={styles.idInfo}>{news._id}</div>
-        <div className={styles.NewsData}>
+        <div className={styles.title}>
           <p>{news.title}</p>
         </div>
+        <div className={styles.date}>
+          <p>{date}</p>
+        </div>
+
         <div className={styles.buttons}>
           <div
             className={styles.editButton}
             onClick={() => switchEditPopUpVisible()}
           >
-            {' '}
             <FiEdit />
           </div>
           <div

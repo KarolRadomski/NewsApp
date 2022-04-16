@@ -9,12 +9,14 @@
 }
 .background {
   width: 100%;
-  min-height: 41vw;
+  min-height: 31vw;
   background-size: cover;
   background-position: center; /* Center the image */
 }
-.container {
-  height: 42vw;
+
+.container:hover {
+  transform: scale(1.005);
+  cursor: pointer;
 }
 
 .title {
