@@ -53,7 +53,11 @@ function NewsPage() {
     return (
       <>
         <h1 className={style.title}>News</h1>
-        <CategoryList key="categories" changeCategory={handleCategoryChange} />
+        <CategoryList
+          key="categories"
+          changeCategory={handleCategoryChange}
+          selectedCategory={selectedCategory}
+        />
         <h3>Sorry, we don't have news to show</h3>
       </>
     );
@@ -62,7 +66,11 @@ function NewsPage() {
     return (
       <>
         <h1 className={style.title}>News</h1>
-        <CategoryList key="categories" changeCategory={handleCategoryChange} />
+        <CategoryList
+          key="categories"
+          changeCategory={handleCategoryChange}
+          selectedCategory={selectedCategory}
+        />
         <div className="news">
           {filteredNews.map((newsOne) => (
             <NewsItemSmallWithDesc key={newsOne._id} news={newsOne} />
@@ -76,7 +84,11 @@ function NewsPage() {
     var components = [];
     components.push(<h1 className={style.title}>News</h1>);
     components.push(
-      <CategoryList key="categories" changeCategory={handleCategoryChange} />
+      <CategoryList
+        key="categories"
+        changeCategory={handleCategoryChange}
+        selectedCategory={selectedCategory}
+      />
     );
     for (let i = 1; i <= numberOfPanels; i++) {
       if (i % 2 === 1) {
