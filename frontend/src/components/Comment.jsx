@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import style from '../styles/Comment.module.css';
 import timeAgo from '../features/timeAgoCalculator';
-import { useEffect } from 'react';
 import {
   AiOutlineLike,
   AiOutlineDislike,
@@ -19,13 +18,14 @@ function Comment({ comment }) {
   const dispatch = useDispatch();
   const cookies = new Cookies();
   let marked = [];
-  console.log(cookies.getAll());
+
+  //Validating if user could add a mark
   const validateIfMarked = (marked, commentID) => {
     if (marked == null) return 1;
     else if (marked.includes(commentID)) return 0;
     else return 1;
   };
-
+  //Handling user clicked like button
   const likeHandler = () => {
     if (cookies.get('marked') != null) marked = cookies.get('marked');
     if (validateIfMarked(marked, comment._id)) {
@@ -34,14 +34,13 @@ function Comment({ comment }) {
       } else marked.push(comment._id);
       cookies.remove('marked');
       cookies.set('marked', marked, {
-        // path: `/newsdetails/${window.location.pathname.slice(13)}`,
         path: `/`,
         expires: new Date(Date.now() + 1000 * 3600 * 24 * 365),
       });
       dispatch(incrementLikesCounter(comment._id));
     }
   };
-
+  //Handling user clicked dislike button
   const dislikeHandler = () => {
     if (cookies.get('marked') != null) marked = cookies.get('marked');
     if (validateIfMarked(marked, comment._id)) {
@@ -56,9 +55,9 @@ function Comment({ comment }) {
       dispatch(decrementLikesCounter(comment._id));
     }
   };
-
+  // Handling delete button
   const deleteHandler = () => {
-    dispatch(deleteComment(comment._id));
+    if (admin) dispatch(deleteComment(comment._id));
   };
 
   return (
