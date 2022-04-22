@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import style from '../styles/Comment.module.css';
 import timeAgo from '../features/timeAgoCalculator';
+import { useEffect } from 'react';
 import {
   AiOutlineLike,
   AiOutlineDislike,
@@ -13,38 +14,44 @@ import {
 } from '../features/comments/commentsSlice';
 import Cookies from 'universal-cookie';
 
-let marked = [];
 function Comment({ comment }) {
   const { admin } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const cookies = new Cookies();
-  if (cookies.get('marked')) marked = cookies.get('marked');
+  let marked = [];
+  console.log(cookies.getAll());
+  const validateIfMarked = (marked, commentID) => {
+    if (marked == null) return 1;
+    else if (marked.includes(commentID)) return 0;
+    else return 1;
+  };
 
   const likeHandler = () => {
-    if (
-      !cookies.get('marked') ||
-      !cookies.get('marked').includes(comment._id)
-    ) {
-      if (cookies.get('marked')) marked = cookies.get('marked');
-      marked.push(comment._id);
+    if (cookies.get('marked') != null) marked = cookies.get('marked');
+    if (validateIfMarked(marked, comment._id)) {
+      if (typeof marked == 'string') {
+        marked = [comment._id];
+      } else marked.push(comment._id);
       cookies.remove('marked');
       cookies.set('marked', marked, {
-        path: `/newsdetails/${window.location.pathname.slice(13)}`,
+        // path: `/newsdetails/${window.location.pathname.slice(13)}`,
+        path: `/`,
+        expires: new Date(Date.now() + 1000 * 3600 * 24 * 365),
       });
       dispatch(incrementLikesCounter(comment._id));
     }
   };
 
   const dislikeHandler = () => {
-    if (
-      !cookies.get('marked') ||
-      !cookies.get('marked').includes(comment._id)
-    ) {
-      if (cookies.get('marked')) marked = cookies.get('marked');
-      marked.push(comment._id);
+    if (cookies.get('marked') != null) marked = cookies.get('marked');
+    if (validateIfMarked(marked, comment._id)) {
+      if (typeof marked == 'string') {
+        marked = [comment._id];
+      } else marked.push(comment._id);
       cookies.remove('marked');
       cookies.set('marked', marked, {
-        path: `/newsdetails/${window.location.pathname.slice(13)}`,
+        path: `/`,
+        expires: new Date(Date.now() + 1000 * 3600 * 24 * 365),
       });
       dispatch(decrementLikesCounter(comment._id));
     }
