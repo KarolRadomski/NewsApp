@@ -11,3 +11,13 @@
   margin-top: 2vw;
   margin-bottom: auto;
 }
+
+@media (max-width: 700px) {
+  .footer {
+    height: 15vw;
+  }
+  .footerText {
+    font-size: 3vw;
+    margin-top: 4vw;
+  }
+}
