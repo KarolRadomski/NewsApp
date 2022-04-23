@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NewsPage from './pages/NewsPage';
 import Login from './pages/Login';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import AdminPanel from './pages/AdminPanel';
 import NewsDetails from './pages/NewsDetails';
 import CookieConsent from 'react-cookie-consent';
@@ -9,7 +10,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        <Header key={'header'} />
         <div className="container">
           <Routes>
             <Route path="/" element={<NewsPage />} />
@@ -18,6 +19,7 @@ function App() {
             <Route path="/newsdetails/:id" element={<NewsDetails />} />
           </Routes>
           <CookieConsent
+            key={'cookie'}
             location="bottom"
             buttonText="I Agree"
             cookieName="cookie-consent"
@@ -39,6 +41,7 @@ function App() {
             </p>
           </CookieConsent>
         </div>
+        <Footer />
       </Router>
     </>
   );

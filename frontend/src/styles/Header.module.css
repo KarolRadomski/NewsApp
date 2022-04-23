@@ -25,6 +25,9 @@
 .logo {
   margin-right: 50px;
 }
+.logo img {
+  max-height: 4vw;
+}
 .login {
   max-height: 0;
 }

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { logout, reset } from '../features/adminAuth/authSlice';
 import style from '../styles/Header.module.css';
 import { RiMenuFill } from 'react-icons/ri';
-
+import logo from '../logo.png';
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function Header() {
   return (
     <nav className={style.navbar + ' ' + style.container}>
       <a href="/" className={style.logo}>
-        NewsApp
+        <img src={logo} alt="NewsApp" />
       </a>
       {admin ? (
         <>
