@@ -1,7 +1,7 @@
 
 # NewsApp
 
-**NewsApp** to serwis informacyjny z wbudowanym systemem CMS dla administratora. Backend aplikacji został wykonany przy użyciu **Node.js** oraz frameworka **Express.js**. Jako baza danych zostało użyte **MongoDB** obsługiwane za pomocą biblioteki **Mongoose**. Frontend został przygotowany w **React.js**. Dla poprawienia czytelności i wygody zarządania danymi wewnątrz aplikacji zastosowany został **Redux** wraz z **Redux Toolkit**.
+**NewsApp** to serwis informacyjny z wbudowanym systemem CMS dla administratora. Backend aplikacji został wykonany przy użyciu **Node.js** oraz frameworka **Express.js**. Jako baza danych zostało użyte **MongoDB** obsługiwane za pomocą biblioteki **Mongoose**. Frontend został przygotowany w **React.js**. Dla poprawienia czytelności i wygody zarządzania danymi wewnątrz aplikacji zastosowany został **Redux** wraz z **Redux Toolkit**.
 
 ## Funkcjonalności
 
