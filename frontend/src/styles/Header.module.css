@@ -11,7 +11,7 @@
   align-items: center; /*Centers the children of a flex container vertically.*/
   justify-content: space-between; /*Adds space between each child of a flex container.*/
   background-color: #222527;
-  padding-block: 15px; /*Padding top and bottom*/
+  padding-block: 5px; /*Padding top and bottom*/
   padding-left: 10%;
   padding-right: 10%;
   border-bottom: 7px solid #e5383b;
@@ -21,12 +21,14 @@
   text-decoration: none;
   color: inherit; /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
   cursor: pointer;
+  font-size: larger;
 }
 .logo {
   margin-right: 50px;
 }
 .logo img {
-  max-height: 4vw;
+  max-height: 100px;
+  margin-top: 10px;
 }
 .login {
   max-height: 0;
@@ -54,7 +56,7 @@
     padding: 20px;
   }
   .navbar label {
-    display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+    display: inline-flex;
     align-items: center;
     cursor: pointer;
   }
@@ -62,10 +64,13 @@
     padding-left: 5%;
     padding-right: 5%;
   }
-  /* 
-        The general sibling selector (~) selects all elements that are next siblings of #toggler.
-        In this case we target the .menu and we turn the height back to 100% to show the menu.
-    */
+  .logo img {
+    max-height: 60px;
+  }
+  .navbar a {
+    font-size: medium;
+  }
+
   #toggler:checked ~ .menu {
     max-height: 100%;
   }
