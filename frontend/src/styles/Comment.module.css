@@ -19,6 +19,7 @@
 }
 .content {
   font-size: smaller;
+  text-align: left;
 }
 .likes {
   display: flex;
@@ -49,11 +50,11 @@ svg {
   }
   .likesCounterGreen {
     margin-left: 0px;
-    margin-right: 5px;
+    margin-right: -2px;
   }
   .likesCounterRed {
     color: red;
     margin-left: 0px;
-    margin-right: 5px;
+    margin-right: -2px;
   }
 }

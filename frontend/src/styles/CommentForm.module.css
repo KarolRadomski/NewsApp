@@ -42,7 +42,11 @@ textarea {
   transform: scale(0.98);
 }
 @media (max-width: 600px) {
-  input {
+  .formGroup input {
     width: 60%;
+  }
+  .formGroup input,
+  textarea {
+    font-size: 3vw;
   }
 }
