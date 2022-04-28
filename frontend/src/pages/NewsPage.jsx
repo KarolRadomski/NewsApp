@@ -5,7 +5,6 @@ import NewsItemSmallWithDesc from '../components/NewsItemSmallWithDesc';
 import CategoryList from '../components/CategoryList';
 import PanelLeftBig from '../components/PanelLeftBig';
 import PanelRightBig from '../components/PanelRightBig';
-import style from '../styles/NewsPage.module.css';
 import Spinner from '../components/Spinner';
 import { getNews, newsReset } from '../features/news/newsSlice';
 
@@ -52,7 +51,6 @@ function NewsPage() {
     //brak newsów
     return (
       <>
-        <h1 className={style.title}>News</h1>
         <CategoryList
           key="categories"
           changeCategory={handleCategoryChange}
@@ -65,7 +63,6 @@ function NewsPage() {
     //za mało na panel więc same małe elementy
     return (
       <>
-        <h1 className={style.title}>News</h1>
         <CategoryList
           key="categories"
           changeCategory={handleCategoryChange}
@@ -82,7 +79,6 @@ function NewsPage() {
     let numberOfPanels = filteredNews.length / 3;
     let index = 0;
     var components = [];
-    components.push(<h1 className={style.title}>News</h1>);
     components.push(
       <CategoryList
         key="categories"
