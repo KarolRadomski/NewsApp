@@ -50,11 +50,17 @@
 }
 @media (max-width: 800px) {
   .img img {
-    max-width: 35vw;
+    max-width: 20vw;
   }
 
   .descriptionAndCategory {
-    font-size: small;
+    font-size: 1.5vw;
+  }
+  .titleAndData {
+    font-size: 1.5vw;
+  }
+  .data {
+    margin-top: 2vw;
   }
 }
 @media (max-width: 700px) {
@@ -68,5 +74,18 @@
   .descriptionAndCategory {
     margin: 0;
     padding: 10px;
+    font-size: 2.3vw;
+  }
+
+  .titleAndData {
+    font-size: 2vw;
+  }
+  .titleAndData h2 {
+    margin-bottom: 0;
+  }
+  .data {
+    font-size: 1.8vw;
+
+    margin-top: 1vw;
   }
 }

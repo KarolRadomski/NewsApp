@@ -1,5 +1,5 @@
 .titleText {
-  margin: auto 10px;
+  margin: auto 10px 0 10px;
 }
 .img {
   position: absolute;
@@ -8,7 +8,7 @@
 }
 .background {
   width: 100%;
-  min-height: 15.5vw;
+  min-height: 13.5vw;
   background-size: cover;
   background-position: center; /* Center the image */
   justify-items: end;
@@ -21,24 +21,40 @@
 
 .title {
   position: relative;
-  top: 12.5vw;
-  background-color: rgba(0, 0, 0, 0.459);
+  display: flex;
+  flex-direction: column;
+  top: 9.5vw;
+  background-image: linear-gradient(
+    0deg,
+    rgba(3, 3, 3, 0.774) 15.5%,
+    rgba(95, 95, 95, 0.1) 90.6%
+  );
   font-weight: 500;
   font-size: 1.5vw;
   text-align: left;
   color: white;
-  height: 3vw;
+  height: 4vw;
 }
 @media (max-width: 600px) {
   .background {
-    height: 50vw;
+    min-height: 42vw;
   }
   .title {
     font-size: 3vw;
-    height: 6vw;
-    top: 44vw;
+    height: 8vw;
+    top: 34vw;
   }
   .titleText {
-    margin: 0 3px;
+    margin: auto 3px 0 3px;
+  }
+}
+@media (min-width: 2500px) {
+  .background {
+    min-height: 8vw;
+  }
+  .title {
+    top: 6vw;
+    font-size: 1vw;
+    height: 2vw;
   }
 }

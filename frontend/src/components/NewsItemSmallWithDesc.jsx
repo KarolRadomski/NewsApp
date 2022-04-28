@@ -14,7 +14,7 @@ function NewsItemSmallWithDesc({ news }) {
             <h2>{news.title}</h2>
           </div>
           <div className={styles.descriptionAndCategory}>
-            <p>{news.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: news.description }} />
 
             <p className={styles.data}>{timeAgo(news.createdAt)}</p>
           </div>

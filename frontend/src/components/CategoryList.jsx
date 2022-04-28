@@ -19,7 +19,7 @@ function CategoryList({ changeCategory, selectedCategory }) {
             }
             onClick={() => changeActive('news')}
           >
-            News
+            ALL
           </button>
         </li>
         <li>
