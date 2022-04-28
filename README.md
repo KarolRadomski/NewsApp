@@ -16,7 +16,7 @@
 Aplikacja dostępna jest pod adresem: https://newsappradomski.herokuapp.com
 
 - **Dane logowania do panelu administratora:**</br>
-  E-mail: karol@gmail.com</br>
+  E-mail: admin@gmail.com</br>
   Hasło: 123456
 
 ## Instalacja
